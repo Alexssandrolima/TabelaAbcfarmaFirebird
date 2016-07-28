@@ -1,0 +1,15 @@
+c:\ProjetosCshap\TabelaAbcfarmaLocal\bin\Release\TabelaAbcfarmaLocal.exe.config
+c:\ProjetosCshap\TabelaAbcfarmaLocal\bin\Release\TabelaAbcfarmaLocal.exe.manifest
+c:\ProjetosCshap\TabelaAbcfarmaLocal\bin\Release\TabelaAbcfarmaLocal.application
+c:\ProjetosCshap\TabelaAbcfarmaLocal\bin\Release\TabelaAbcfarmaLocal.exe
+c:\ProjetosCshap\TabelaAbcfarmaLocal\bin\Release\TabelaAbcfarmaLocal.pdb
+c:\ProjetosCshap\TabelaAbcfarmaLocal\obj\x86\Release\TabelaAbcfarmaLocal.FormConfiguracao.resources
+c:\ProjetosCshap\TabelaAbcfarmaLocal\obj\x86\Release\TabelaAbcfarmaLocal.FormTabelaPrincipal.resources
+c:\ProjetosCshap\TabelaAbcfarmaLocal\obj\x86\Release\TabelaAbcfarmaLocal.Properties.Resources.resources
+c:\ProjetosCshap\TabelaAbcfarmaLocal\obj\x86\Release\TabelaAbcfarmaLocal.csproj.GenerateResource.Cache
+c:\ProjetosCshap\TabelaAbcfarmaLocal\obj\x86\Release\TabelaAbcfarmaLocal.TrustInfo.xml
+c:\ProjetosCshap\TabelaAbcfarmaLocal\obj\x86\Release\TabelaAbcfarmaLocal.exe.manifest
+c:\ProjetosCshap\TabelaAbcfarmaLocal\obj\x86\Release\TabelaAbcfarmaLocal.application
+c:\ProjetosCshap\TabelaAbcfarmaLocal\obj\x86\Release\TabelaAbcfarmaLocal.exe
+c:\ProjetosCshap\TabelaAbcfarmaLocal\obj\x86\Release\TabelaAbcfarmaLocal.pdb
+C:\ProjetosCshap\TabelaAbcfarmaLocal\obj\x86\Release\TabelaAbcfarmaLocal.csprojResolveAssemblyReference.cache

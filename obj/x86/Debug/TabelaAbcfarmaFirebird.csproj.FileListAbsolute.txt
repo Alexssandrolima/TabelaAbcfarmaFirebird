@@ -1,0 +1,16 @@
+C:\ProjetosCshap\TabelaAbcfarmaFirebird\bin\Debug\TabelaAbcfarmaFirebird.exe.config
+C:\ProjetosCshap\TabelaAbcfarmaFirebird\obj\x86\Debug\TabelaAbcfarmaFirebird.Properties.Resources.resources
+C:\ProjetosCshap\TabelaAbcfarmaFirebird\obj\x86\Debug\TabelaAbcfarmaFirebird.csproj.GenerateResource.Cache
+C:\ProjetosCshap\TabelaAbcfarmaFirebird\obj\x86\Debug\TabelaAbcfarmaFirebird.csprojResolveAssemblyReference.cache
+C:\ProjetosCshap\TabelaAbcfarmaFirebird\obj\x86\Debug\TabelaAbcfarmaFirebird.FormConfiguracao.resources
+C:\ProjetosCshap\TabelaAbcfarmaFirebird\obj\x86\Debug\TabelaAbcfarmaFirebird.FormTabelaPrincipal.resources
+C:\ProjetosCshap\TabelaAbcfarmaFirebird\bin\Debug\TabelaAbcfarmaFirebird.exe.manifest
+C:\ProjetosCshap\TabelaAbcfarmaFirebird\bin\Debug\TabelaAbcfarmaFirebird.application
+C:\ProjetosCshap\TabelaAbcfarmaFirebird\bin\Debug\TabelaAbcfarmaFirebird.exe
+C:\ProjetosCshap\TabelaAbcfarmaFirebird\bin\Debug\TabelaAbcfarmaFirebird.pdb
+C:\ProjetosCshap\TabelaAbcfarmaFirebird\bin\Debug\FirebirdSql.Data.FirebirdClient.dll
+C:\ProjetosCshap\TabelaAbcfarmaFirebird\obj\x86\Debug\TabelaAbcfarmaFirebird.TrustInfo.xml
+C:\ProjetosCshap\TabelaAbcfarmaFirebird\obj\x86\Debug\TabelaAbcfarmaFirebird.exe.manifest
+C:\ProjetosCshap\TabelaAbcfarmaFirebird\obj\x86\Debug\TabelaAbcfarmaFirebird.application
+C:\ProjetosCshap\TabelaAbcfarmaFirebird\obj\x86\Debug\TabelaAbcfarmaFirebird.exe
+C:\ProjetosCshap\TabelaAbcfarmaFirebird\obj\x86\Debug\TabelaAbcfarmaFirebird.pdb

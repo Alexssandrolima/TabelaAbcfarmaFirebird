@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 10.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="10.0">
+ <Targets>
+  <Target Name="C:\ProjetosCshap\TabelaAbcfarmaFirebird\bin\Release\TabelaAbcfarmaFirebird.exe">
+   <Modules>
+    <Module Name="tabelaabcfarmafirebird.exe">
+     <Namespaces>
+      <Namespace Name="TabelaAbcfarmaFirebird">
+       <Types>
+        <Type Name="ClsDbf" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#BtnLeDBFClick(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird" File="ClsDbf.cs" Line="19">In method 'ClsDbf.BtnLeDBFClick(object, EventArgs)', object 'oConn' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'oConn' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird" File="ClsDbf.cs" Line="25">In method 'ClsDbf.BtnLeDBFClick(object, EventArgs)', call System.IDisposable.Dispose on object 'dt' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="FormTabelaPrincipal" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#configuraçãoToolStripMenuItem_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird" File="FormTabelaPrincipal.cs" Line="136">In method 'FormTabelaPrincipal.configuraçãoToolStripMenuItem_Click(object, EventArgs)', call System.IDisposable.Dispose on object 'configurar' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="TabelaAbcfarmaFirebird.Cls">
+       <Types>
+        <Type Name="Criptografia" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="NonBreaking">
+           <Issue Name="NonBreaking" Certainty="95" Level="CriticalError">Implement IDisposable on 'Criptografia' because it creates members of the following IDisposable types: 'RijndaelManaged', 'RC2CryptoServiceProvider', 'DESCryptoServiceProvider', 'TripleDESCryptoServiceProvider'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#Decrypt(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Cls" File="Criptografia.cs" Line="188">In method 'Criptografia.Decrypt(string)', call System.IDisposable.Dispose on object '_memoryStream' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Encrypt(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Cls" File="Criptografia.cs" Line="160">In method 'Criptografia.Encrypt(string)', call System.IDisposable.Dispose on object '_memoryStream' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetKey()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Cls" File="Criptografia.cs" Line="143">In method 'Criptografia.GetKey()', call System.IDisposable.Dispose on object 'key' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="TabelaAbcfarmaFirebird.Dao">
+       <Types>
+        <Type Name="DaoAcessoDbf" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#Fb_GetSepararDados(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="476">In method 'DaoAcessoDbf.Fb_GetSepararDados(string)', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="477">In method 'DaoAcessoDbf.Fb_GetSepararDados(string)', call System.IDisposable.Dispose on object 'da' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="478">In method 'DaoAcessoDbf.Fb_GetSepararDados(string)', call System.IDisposable.Dispose on object 'dt' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="495">Object 'conexaoMySql' can be disposed more than once in method 'DaoAcessoDbf.Fb_GetSepararDados(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 495</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="483">'DaoAcessoDbf.Fb_GetSepararDados(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+             <Issue Certainty="95" Level="Error" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="488">'DaoAcessoDbf.Fb_GetSepararDados(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="476">The query string passed to 'FbCommand.FbCommand(string, FbConnection)' in 'DaoAcessoDbf.Fb_GetSepararDados(string)' could contain the following variables 'colunasdatabela'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Fb_ProcuraArrayDadosOrdNome(System.String,System.String,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="384">In method 'DaoAcessoDbf.Fb_ProcuraArrayDadosOrdNome(string, string, string)', call System.IDisposable.Dispose on object 'DS' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="379">In method 'DaoAcessoDbf.Fb_ProcuraArrayDadosOrdNome(string, string, string)', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="380">In method 'DaoAcessoDbf.Fb_ProcuraArrayDadosOrdNome(string, string, string)', call System.IDisposable.Dispose on object 'da' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="394">Object 'conexaoMySql' can be disposed more than once in method 'DaoAcessoDbf.Fb_ProcuraArrayDadosOrdNome(string, string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 394</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="388">'DaoAcessoDbf.Fb_ProcuraArrayDadosOrdNome(string, string, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="379">The query string passed to 'FbCommand.FbCommand(string, FbConnection)' in 'DaoAcessoDbf.Fb_ProcuraArrayDadosOrdNome(string, string, string)' could contain the following variables 'Settings.Default.tbtabela', 'receberDadosTabela', 'NomedoTabela', 'MEDTabela'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MySql_AlterarDados(System.String,TabelaAbcfarmaFirebird.ClsObjetoTabela)" Kind="Method" Static="True" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="292">In method 'DaoAcessoDbf.MySql_AlterarDados(string, ClsObjetoTabela)', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="304">Object 'conexaoMySql' can be disposed more than once in method 'DaoAcessoDbf.MySql_AlterarDados(string, ClsObjetoTabela)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 304</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="296">'DaoAcessoDbf.MySql_AlterarDados(string, ClsObjetoTabela)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="292">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'DaoAcessoDbf.MySql_AlterarDados(string, ClsObjetoTabela)' could contain the following variables 'receberDadosTabela', 'tabeladedados.Lab_nom', 'tabeladedados.Med_apr', 'tabeladedados.Med_princi'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MySql_EcluirDados(System.String,System.Int32)" Kind="Method" Static="True" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="140">In method 'DaoAcessoDbf.MySql_EcluirDados(string, int)', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="149">Object 'conexaoMySql' can be disposed more than once in method 'DaoAcessoDbf.MySql_EcluirDados(string, int)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 149</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="143">'DaoAcessoDbf.MySql_EcluirDados(string, int)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="140">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'DaoAcessoDbf.MySql_EcluirDados(string, int)' could contain the following variables 'receberDadosTabela', 'NumerodoId'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MySql_GetDados(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="64">In method 'DaoAcessoDbf.MySql_GetDados(string)', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="65">In method 'DaoAcessoDbf.MySql_GetDados(string)', call System.IDisposable.Dispose on object 'da' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="66">In method 'DaoAcessoDbf.MySql_GetDados(string)', call System.IDisposable.Dispose on object 'dt' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="91">Object 'conexaoMySql' can be disposed more than once in method 'DaoAcessoDbf.MySql_GetDados(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 91</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="70">'DaoAcessoDbf.MySql_GetDados(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="64">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'DaoAcessoDbf.MySql_GetDados(string)' could contain the following variables 'receberDadosTabela'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MySql_GetDadosUnitario(System.String,System.Int32)" Kind="Method" Static="True" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="259">In method 'DaoAcessoDbf.MySql_GetDadosUnitario(string, int)', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="260">In method 'DaoAcessoDbf.MySql_GetDadosUnitario(string, int)', call System.IDisposable.Dispose on object 'da' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="261">In method 'DaoAcessoDbf.MySql_GetDadosUnitario(string, int)', call System.IDisposable.Dispose on object 'dt' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="272">Object 'conexaoMySql' can be disposed more than once in method 'DaoAcessoDbf.MySql_GetDadosUnitario(string, int)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 272</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="265">'DaoAcessoDbf.MySql_GetDadosUnitario(string, int)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="259">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'DaoAcessoDbf.MySql_GetDadosUnitario(string, int)' could contain the following variables 'receberDadosTabela', 'NumerodoId'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MySql_GetSepararDados(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="438">In method 'DaoAcessoDbf.MySql_GetSepararDados(string)', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="439">In method 'DaoAcessoDbf.MySql_GetSepararDados(string)', call System.IDisposable.Dispose on object 'da' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="440">In method 'DaoAcessoDbf.MySql_GetSepararDados(string)', call System.IDisposable.Dispose on object 'dt' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="462">Object 'conexaoMySql' can be disposed more than once in method 'DaoAcessoDbf.MySql_GetSepararDados(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 462</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="450">'DaoAcessoDbf.MySql_GetSepararDados(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+             <Issue Certainty="95" Level="Error" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="455">'DaoAcessoDbf.MySql_GetSepararDados(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="438">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'DaoAcessoDbf.MySql_GetSepararDados(string)' could contain the following variables 'colunasdatabela'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MySql_GetUsuarioseAdmin(System.String,TabelaAbcfarmaFirebird.ClsObjetoTabela,System.Boolean)" Kind="Method" Static="True" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="32">In method 'DaoAcessoDbf.MySql_GetUsuarioseAdmin(string, ClsObjetoTabela, bool)', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="49">Object 'conexaoMySql' can be disposed more than once in method 'DaoAcessoDbf.MySql_GetUsuarioseAdmin(string, ClsObjetoTabela, bool)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 49</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="42">'DaoAcessoDbf.MySql_GetUsuarioseAdmin(string, ClsObjetoTabela, bool)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="32">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'DaoAcessoDbf.MySql_GetUsuarioseAdmin(string, ClsObjetoTabela, bool)' could contain the following variables 'receberDadosTabela', 'tabeladedados.Med_des', 'tabeladedados.Med_abc'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MySql_InserirDados(System.String,TabelaAbcfarmaFirebird.ClsObjetoTabela)" Kind="Method" Static="True" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="113">In method 'DaoAcessoDbf.MySql_InserirDados(string, ClsObjetoTabela)', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="123">Object 'conexaoMySql' can be disposed more than once in method 'DaoAcessoDbf.MySql_InserirDados(string, ClsObjetoTabela)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 123</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="117">'DaoAcessoDbf.MySql_InserirDados(string, ClsObjetoTabela)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="113">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'DaoAcessoDbf.MySql_InserirDados(string, ClsObjetoTabela)' could contain the following variables 'receberDadosTabela', 'dadosdatabela.Med_des', 'dadosdatabela.Med_abc'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MySql_ProcuraArrayDadosOrdNome(System.String,System.String,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="332">In method 'DaoAcessoDbf.MySql_ProcuraArrayDadosOrdNome(string, string, string)', call System.IDisposable.Dispose on object 'DS' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="327">In method 'DaoAcessoDbf.MySql_ProcuraArrayDadosOrdNome(string, string, string)', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="328">In method 'DaoAcessoDbf.MySql_ProcuraArrayDadosOrdNome(string, string, string)', call System.IDisposable.Dispose on object 'da' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="342">Object 'conexaoMySql' can be disposed more than once in method 'DaoAcessoDbf.MySql_ProcuraArrayDadosOrdNome(string, string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 342</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="336">'DaoAcessoDbf.MySql_ProcuraArrayDadosOrdNome(string, string, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="327">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'DaoAcessoDbf.MySql_ProcuraArrayDadosOrdNome(string, string, string)' could contain the following variables 'Settings.Default.tbtabela', 'receberDadosTabela', 'MEDTabela', 'NomedoTabela'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MySql_ProcuraDados(System.String,System.Int32)" Kind="Method" Static="True" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="166">In method 'DaoAcessoDbf.MySql_ProcuraDados(string, int)', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="187">Object 'conexaoMySql' can be disposed more than once in method 'DaoAcessoDbf.MySql_ProcuraDados(string, int)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 187</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="181">'DaoAcessoDbf.MySql_ProcuraDados(string, int)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="166">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'DaoAcessoDbf.MySql_ProcuraDados(string, int)' could contain the following variables 'receberDadosTabela', 'NumerodoId'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MySql_ProcuraDadosadminstrador(System.String,System.String)" Kind="Method" Static="True" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="535">In method 'DaoAcessoDbf.MySql_ProcuraDadosadminstrador(string, string)', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="555">Object 'conexaoMySql' can be disposed more than once in method 'DaoAcessoDbf.MySql_ProcuraDadosadminstrador(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 555</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="549">'DaoAcessoDbf.MySql_ProcuraDadosadminstrador(string, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="535">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'DaoAcessoDbf.MySql_ProcuraDadosadminstrador(string, string)' could contain the following variables 'receberDadosTabela', 'NomedoTabela'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MySql_ProcuraDadosNome(System.String,System.String)" Kind="Method" Static="True" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="204">In method 'DaoAcessoDbf.MySql_ProcuraDadosNome(string, string)', call System.IDisposable.Dispose on object 'cmd' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="242">Object 'conexaoMySql' can be disposed more than once in method 'DaoAcessoDbf.MySql_ProcuraDadosNome(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 242</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="218">'DaoAcessoDbf.MySql_ProcuraDadosNome(string, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-05-18 02:50:28Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\ProjetosCshap\TabelaAbcfarmaFirebird\Dao" File="DaoAcessoDbf.cs" Line="204">The query string passed to 'SqlCommand.SqlCommand(string, SqlConnection)' in 'DaoAcessoDbf.MySql_ProcuraDadosNome(string, string)' could contain the following variables 'receberDadosTabela', 'NomedoTabela'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000">
+   <Name>Dispose objects before losing scope</Name>
+   <Description>If a disposable object is not explicitly disposed before all references to it are out of scope, the object will be disposed at some indeterminate time when the garbage collector runs the finalizer of the object. Because an exceptional event might occur that will prevent the finalizer of the object from running, the object should be explicitly disposed instead.</Description>
+   <Resolution Name="ExceptionEdge">In method {0}, object {1} is not disposed along all exception paths. Call System.IDisposable.Dispose on object {1} before all references to it are out of scope.</Resolution>
+   <Resolution Name="NonExceptionEdge">In method {0}, call System.IDisposable.Dispose on object {1} before all references to it are out of scope.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182289(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Do not dispose objects multiple times</Name>
+   <Description>A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.</Description>
+   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 555</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200">
+   <Name>Rethrow to preserve stack details</Name>
+   <Description>Use the IL rethrow instruction to preserve original stack details when re-raising a caught exception.</Description>
+   <Resolution Name="Default">{0} rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182363(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>Review SQL queries for security vulnerabilities</Name>
+   <Description>A SQL command string built from user input is vulnerable to SQL injection attacks. Microsoft SQL Server and other database servers support stored procedures and parameterized SQL queries, which reduce the risk of injection attacks.</Description>
+   <Resolution Name="WithNonLiterals">The query string passed to {0} in {1} could contain the following variables {2}. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+   <Name>Types that own disposable fields should be disposable</Name>
+   <Description>Types that declare disposable members should also implement IDisposable. If the type does not own any unmanaged resources, do not implement a finalizer on it.</Description>
+   <Resolution Name="NonBreaking">Implement IDisposable on {0} because it creates members of the following IDisposable types: {1}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182172(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="10.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+ <Exceptions>
+  <Exception Keyword="CA0060" Kind="Engine" TreatAsWarning="True">
+   <Type>Microsoft.FxCop.Sdk.FxCopException</Type>
+   <ExceptionMessage>The indirectly-referenced assembly 'System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac, Retargetable=Yes' could not be found. This assembly is not required for analysis, however, analysis results could be incomplete. This assembly was referenced by: C:\dados\FirebirdSql.Data.FirebirdClient.dll.</ExceptionMessage>
+  </Exception>
+ </Exceptions>
+</FxCopReport>
