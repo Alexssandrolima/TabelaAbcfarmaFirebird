@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -95,7 +96,15 @@ namespace TabelaAbcfarmaFirebird
             }
             catch (Exception ex)
             {
-                MessageBox.Show("\n \n Olá, ao buscar dados, ocorreu um Erro! \n Lique Alex, Fone: (83) 9 9993-8638 \n \n" + ex.Message, "Erro de Acesso a Tabela ao preencher Grid", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+#if DEBUG
+                {
+                    MessageBox.Show("\n " + ex, "Erro preencher Grid", MessageBoxButtons.OK,MessageBoxIcon.Warning);                    
+                }
+#else
+                {
+                    MessageBox.Show("\n \n Olá, ao buscar dados, ocorreu um Erro! \n Lique Alex, Fone: (83) 9 9993-8638 \n \n" + ex.Message, "Erro de Acesso a Tabela ao preencher Grid", MessageBoxButtons.OK, MessageBoxIcon.Warning);                    
+                }
+#endif
                 Close();
             }
         }

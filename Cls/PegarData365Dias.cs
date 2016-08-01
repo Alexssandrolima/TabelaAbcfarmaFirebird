@@ -32,7 +32,7 @@ namespace TabelaAbcfarmaFirebird.Cls
             }
             catch(Exception)
             {
-                MessageBox.Show(" Formato da data diferente de dd/mm/aaa ", "Formato de dados! " + dataFinal);
+                MessageBox.Show(" Formato da data diferente de dd/mm/aaaa \n sua data e hora é: "+ dataFinal , "Formato de dados! " + dataFinal);
                 Application.Exit();
                 return DataParaAcabarValidadeSistema;
             }

@@ -466,11 +466,12 @@ namespace TabelaAbcfarmaFirebird.Dao
 
         public static DataTable Fb_GetSepararDados(string colunasdatabela)  //metodo de chamar os dados da classe RECEBER /// cliente/produtos.
         {
-            using (FbConnection conexaoMySql = Dao.DaoBaseAcessoFb.getInstancia().getConexaoSQL())
+            //MessageBox.Show("" + colunasdatabela);
+            using (FbConnection conexaoMySql = DaoBaseAcessoFb.getInstancia().getConexaoSQL())
             {
+                //MessageBox.Show("" + conexaoMySql.ConnectionString);
                 try
                 {
-                    
                     conexaoMySql.Open();
                     string mSQL = "Select " + colunasdatabela + " from tabela_dbf";         //seleciona tudo da
                     FbCommand cmd = new FbCommand(mSQL, conexaoMySql); // dar um comando dentro do banco...

@@ -85,7 +85,7 @@ namespace TabelaAbcfarmaFirebird
         
 
         [Required(ErrorMessage = "Informe o seu email")]
-        [RegularExpression(".+\\@.+\\..+", ErrorMessage = "Informe um email válido...")]
+        [RegularExpression(".+\\@.+\\..+", ErrorMessage = "Informe um email válido email@email.com ...")]
         public string Email{ get; set; }
         
         private string serial;

@@ -29,35 +29,41 @@ namespace TabelaAbcfarmaFirebird
         string varSourcePath = Environment.CurrentDirectory + "\\DADOS\\";
 
 
-        public string arquivoserialPath { get; set; }
+        public string ArquivoserialPath { get; set; }
         public DataGridView dv { get; set; }
 
         public FormConfiguracao()
         {
             InitializeComponent();
-            arquivoserialPath = Environment.CurrentDirectory + "\\serial.txt";
+            ArquivoserialPath = Environment.CurrentDirectory + "\\serial.txt";
             txtConnuser.Text = ConfigurationManager.ConnectionStrings["TabelaAbcfarmaLocal.Properties.Settings.User"].ToString();
             txtPassword.Text = ConfigurationManager.ConnectionStrings["TabelaAbcfarmaLocal.Properties.Settings.Password"].ToString();
             txtDatabase.Text = ConfigurationManager.ConnectionStrings["TabelaAbcfarmaLocal.Properties.Settings.Database"].ToString();
+            MetodoVerificarTextoUsuarioSenhaBranco();
 
-            if (txtConnuser.Text == string.Empty) txtConnuser.Text = "User=SYSDBA";
-            if (txtPassword.Text == string.Empty) txtPassword.Text = "Password=masterkey";
-            if (txtDatabase.Text == string.Empty) txtDatabase.Text = "DADOS_tabela.FDB";
-
-            labelconnBase.Text = "Database=" + varSourcePath + txtDatabase.Text + ";" + txtConnuser.Text + ";" + txtPassword.Text;
+            MetodoPreencherLabelconnBase();
         }
 
-        public FormConfiguracao(string _arquivoserialPath)
+        private void MetodoPreencherLabelconnBase()
+        {
+            labelconnBase.Text = @"Database=" + varSourcePath + txtDatabase.Text + @";" + txtConnuser.Text + @";" +
+                                 txtPassword.Text;
+        }
+
+        private void MetodoVerificarTextoUsuarioSenhaBranco()
+        {
+            if (txtConnuser.Text == string.Empty) txtConnuser.Text = @"User=SYSDBA";
+            if (txtPassword.Text == string.Empty) txtPassword.Text = @"Password=masterkey";
+            if (txtDatabase.Text == string.Empty) txtDatabase.Text = @"DADOS_tabela.FDB";
+        }
+
+        public FormConfiguracao(string arquivoserialPath)
         {
             // TODO: Complete member initialization
             InitializeComponent();
-            this.arquivoserialPath = _arquivoserialPath;
-            if (txtConnuser.Text == string.Empty) txtConnuser.Text = "User=SYSDBA";
-            if (txtPassword.Text == string.Empty) txtPassword.Text = "Password=masterkey";
-            if (txtDatabase.Text == string.Empty) txtDatabase.Text = "DADOS_tabela.FDB";
-
-            labelconnBase.Text = "Database=" + varSourcePath + txtDatabase.Text + ";" + txtConnuser.Text + ";" + txtPassword.Text;
-
+            this.ArquivoserialPath = arquivoserialPath;
+            MetodoVerificarTextoUsuarioSenhaBranco();
+            MetodoPreencherLabelconnBase();
         }
 
         private void buttonVerArquivo_Click(object sender, EventArgs e)
@@ -106,7 +112,7 @@ namespace TabelaAbcfarmaFirebird
         {
             //if (textBoxcep.Text != string.Empty && textBoxcnpj.Text != string.Empty && textBoxComputador.Text != string.Empty && textBoxemail.Text != string.Empty && textBoxendereco.Text != string.Empty && textBoxnome.Text != string.Empty && textBoxnumero.Text != string.Empty)
             //{
-                MetodoGravarDadosUsuario();
+                MetodoGravarDadosUsuarioSistema();
             //}
             //else
             //{
@@ -114,7 +120,7 @@ namespace TabelaAbcfarmaFirebird
             //}
         }
 
-        private void MetodoGravarDadosUsuario()
+        private void MetodoGravarDadosUsuarioSistema()
         {
 
             ClsUsuarioComputador dadosCliente = new ClsUsuarioComputador();
@@ -126,41 +132,53 @@ namespace TabelaAbcfarmaFirebird
             dadosCliente.Nome = textBoxnome.Text;
             dadosCliente.Numero = textBoxnumero.Text;
             dadosCliente.Datainicio = DateTime.Now;
-            dadosCliente.Datafinal = Cls.PegarData365Dias.gerandoDatacom365Dias(dadosCliente.Datainicio);
+            dadosCliente.Datafinal = PegarData365Dias.gerandoDatacom365Dias(dadosCliente.Datainicio);
 
 
-            bool Validacaodados = ValidarAluno(dadosCliente);
+            bool validacaodados = ValidarClientes(dadosCliente);
 
-            if (Validacaodados)
+            if (validacaodados)
             {
-                textBoxkey.Text = Cls.Encrypt.criptografarArquivoRetornar(dadosCliente);
-                if (textBoxkey.Text != string.Empty)
+                try
                 {
-                    string retorno = Cls.GravarArquivoSerial.GravarArquivoSerialliberacao(arquivoserialPath, textBoxkey.Text);
+                
+                    textBoxkey.Text = Encrypt.criptografarArquivoRetornar(dadosCliente);
+                    string retorno = GravarArquivoSerial.GravarArquivoSerialliberacao(ArquivoserialPath,
+                        textBoxkey.Text);
                     if (retorno != string.Empty)
                     {
-                        MessageBox.Show(" \n " + retorno, "Retorno da aplicação ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(" \n " + retorno, @"Retorno da aplicação ", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
                     }
-
                     //ConfigurationManager.ConnectionStrings.Clear();
                     string conectioStringtxtConnuser = txtConnuser.Text;
                     string conectioStringtxtPassword = txtPassword.Text;
                     string conectioStringtxtDatabase = txtDatabase.Text;
 
-                    System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                    Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                     // Get the connection strings section.
                     ConnectionStringsSection csSection = config.ConnectionStrings;
 
-                    csSection.ConnectionStrings["TabelaAbcfarmaLocal.Properties.Settings.User"].ConnectionString = conectioStringtxtConnuser;
-                    csSection.ConnectionStrings["TabelaAbcfarmaLocal.Properties.Settings.Password"].ConnectionString = conectioStringtxtPassword;
-                    csSection.ConnectionStrings["TabelaAbcfarmaLocal.Properties.Settings.Database"].ConnectionString = conectioStringtxtDatabase;
+                    //string connPassword = ConfigurationManager.ConnectionStrings["TabelaAbcfarmaLocal.Properties.Settings.Password"].ToString();
+
+                    csSection.ConnectionStrings["TabelaAbcfarmaLocal.Properties.Settings.User"].ConnectionString =
+                        conectioStringtxtConnuser;
+                    csSection.ConnectionStrings["TabelaAbcfarmaLocal.Properties.Settings.Password"].ConnectionString
+                        = conectioStringtxtPassword;
+                    csSection.ConnectionStrings["TabelaAbcfarmaLocal.Properties.Settings.Database"].ConnectionString
+                        = conectioStringtxtDatabase;
                     config.Save(ConfigurationSaveMode.Modified);
                     // reload the config file so the new values are available
 
                     ConfigurationManager.RefreshSection(csSection.SectionInformation.Name);
 
 
+                    MessageBox.Show(@" " +
 
+                    ConfigurationManager.ConnectionStrings["TabelaAbcfarmaLocal.Properties.Settings.User"].ToString() + @" " +
+                    ConfigurationManager.ConnectionStrings["TabelaAbcfarmaLocal.Properties.Settings.Password"].ToString() + @" " +
+                    ConfigurationManager.ConnectionStrings["TabelaAbcfarmaLocal.Properties.Settings.Database"].ToString()
+ );
 
                     //ConfigurationManager.ConnectionStrings["TabelaAbcfarmaLocal.Properties.Settings.User"].ToString() = txtConnuser.Text;
                     //ConfigurationManager.ConnectionStrings["TabelaAbcfarmaLocal.Properties.Settings.Password"].ToString() = txtPassword.Text;
@@ -180,23 +198,69 @@ namespace TabelaAbcfarmaFirebird
                     textBoxendereco.Clear();
                     textBoxnome.Clear();
                     textBoxnumero.Clear();
-            }
- 
-
+                }
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show(@"\n " + ex , @"Erro encontrado.");
+               // }
+                catch (NullReferenceException ex)
+                {
+                    MessageBox.Show(@"\n " + ex, @"null Erro encontrado.");
+                }
 
            }
 
         }
 
-        private bool ValidarAluno(object dadosCliente)
+        private bool ValidarClientes(object dadosCliente)
         {
          
             //private void ValidarAluno(object obj)
             var erros = Validacao.getValidationErros(dadosCliente);
 	        foreach (var error in erros)
 	        {
-	            MessageBox.Show((error.ErrorMessage));
-                return false;
+                MessageBox.Show((error.ErrorMessage));
+
+                switch (error.ErrorMessage)
+                {
+                    case "Números e caracteres especiais não são permitidos no nome.":
+                    {
+                        textBoxnome.Focus();
+                        return false;
+                    }
+                    case "Informe o seu Cnpj por favor":
+                    case "Informe um Cnpj válido 99.999.999/9999-99 ...":
+                    {
+                        textBoxcnpj.Focus();
+                        return false;
+                    }
+                    case "O Endereço é obrigatório":
+                    {
+                        textBoxendereco.Focus();
+                        return false;
+                    }
+                    case "Numero da casa é obrigatório":
+                    {
+                        textBoxnumero.Focus();
+                        return false;
+                    }
+                    case "Informe o seu Cep":
+                    case "Informe um Cep válido 00000-000 ...":
+                    {
+                        textBoxcep.Focus();
+                        return false;
+                    }
+                    case "Informe um email válido...":
+                    case "Informe o seu email":
+                    {
+                        textBoxemail.Focus();
+                        return false;
+                    }
+                    default:
+                        // You can use the default case.
+                        return true;
+                }
+
             }
             return true;
             
@@ -204,8 +268,8 @@ namespace TabelaAbcfarmaFirebird
 
         private void buttonAtivarKey_Click(object sender, EventArgs e)
         {
-           string retorno = Cls.GravarArquivoSerial.GravarArquivoSerialliberacao(arquivoserialPath, textBoxkey.Text);
-           MessageBox.Show(" " + retorno, "Retorno da aplicação ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           string retorno = GravarArquivoSerial.GravarArquivoSerialliberacao(ArquivoserialPath, textBoxkey.Text);
+           MessageBox.Show(@" " + retorno, @"Retorno da aplicação ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 

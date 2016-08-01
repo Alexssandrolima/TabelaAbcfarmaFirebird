@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Configuration; //usando configuração app.config
@@ -14,14 +15,12 @@ namespace TabelaAbcfarmaFirebird
         [STAThread]
         static void Main(string[] args)
         {
-                      
 
-            string arquivoserialPath = Environment.CurrentDirectory + "\\serial.txt";
+            bool arquivoEncontrado = File.Exists(Environment.CurrentDirectory + "\\serial.txt");
 
             
-            MessageBox.Show("    procurar onde esta dando o erro de cnpj tem que ter 14 digitos. " +
-                "\n outra coisa enviar email de cadastro e erros \n "+ args );
-            if(System.IO.File.Exists(arquivoserialPath))
+            MessageBox.Show(" verificar porque não esta conectando ao banco de dados... \n outra coisa enviar email de cadastro e erros \n " + args.ToString() );
+            if (arquivoEncontrado)
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
@@ -30,6 +29,7 @@ namespace TabelaAbcfarmaFirebird
             }
             else
             {
+                string arquivoserialPath = Environment.CurrentDirectory + "\\serial.txt";
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new FormConfiguracao(arquivoserialPath));
